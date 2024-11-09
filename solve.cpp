@@ -21,29 +21,14 @@ typedef long long ll;
 typedef unsigned long long ull;
 template <typename T>
 using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
-class Solution {
-public:
-    int scoreOfString(string s) {
-        long long sum(0);
-        for (int i = 1; i < s.length(); ++i) {
-            sum += abs((int)s[i] - (int)s[i-1]);
-        }
-        return sum;
-    }
-};
+const int MOD = (int)1e9 + 7;
+const ll INF = (ll)1e18 + 22072005;
 
 int main () {
-    #ifndef ONLINE_JUDGE
-    freopen("inp.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
-    #endif
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
     cout.tie(nullptr);
-    Solution test;
-    string s; cin >> s;
-    cout << test.scoreOfString(s);
+    
     cerr << "\nProgram Executed Successfully!\n";
     cerr << "Time elapsed: " << TIME << "s.";
     return 0;
